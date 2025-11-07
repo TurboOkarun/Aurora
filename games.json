@@ -12,23 +12,24 @@
     "entry": "games/FNAF1/index.html"
   },
   {
-    "title": "SonicAdvance",
-    "entry": "games/SonicAdvance/index.html"
+    "title": "FNF",
+    "entry": "games/FNF/index.html"
   },
   {
-    "title": "Super Mario 64",
-    "entry": "games/SM64/index.html"
+    "title": "Melon Playground",
+    "entry": "games/MelonP/index.html"
   },
   {
-    "title": "Sonic the Hedgehog",
-    "entry": "games/STH/index.html"
+    "title": "Plants vs Zombies",
+    "entry": "games/PvZ/index.html"
   },
   {
     "title": "People Playground",
     "entry": "games/PeoplePlayground/index.html"
   },
   {
-    "title": "Super Mario Bros",
-    "entry": "games/SMB/index.html"
+    "title": "Hollow Knight",
+    "entry": "games/HollowKnight/index.html"
   }
 ]
+
