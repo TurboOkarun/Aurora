@@ -16,8 +16,8 @@
     "entry": "games/FNF/index.html"
   },
   {
-    "title": "Melon Playground",
-    "entry": "games/MelonP/index.html"
+    "title": "Geometry Dash Lite",
+    "entry": "games/GDL/index.html"
   },
   {
     "title": "Plants vs Zombies",
@@ -32,4 +32,5 @@
     "entry": "games/HollowKnight/index.html"
   }
 ]
+
 
