@@ -34,8 +34,21 @@
   {
     "title": "Slime Rancher",
     "entry": "games/SlimeR/index.html"
+  },
+  {
+    "title": "Cuphead",
+    "entry": "games/Cuphead/index.html"
+  },
+  {
+    "title": "Sonic Mania",
+    "entry": "games/SonicMania/index.html"
+  },
+  {
+    "title": "Granny",
+    "entry": "games/Granny/index.html"
   }
 ]
+
 
 
 
