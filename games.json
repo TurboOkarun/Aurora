@@ -46,8 +46,21 @@
   {
     "title": "Granny",
     "entry": "games/Granny/index.html"
+  },
+  {
+    "title": "Granny 2",
+    "entry": "games/Granny2/index.html"
+  }, 
+  {
+    "title": "Granny 3",
+    "entry": "games/Granny3/index.html"
+  },  
+  {
+    "title": "Fruit Ninja",
+    "entry": "games/FruitNinja/index.html"
   }
 ]
+
 
 
 
