@@ -58,8 +58,13 @@
   {
     "title": "Fruit Ninja",
     "entry": "games/FruitNinja/index.html"
+  },
+  {
+    "title": "Five Night's at Shrek's Hotel",
+    "entry": "games/FNASH/index.html"
   }
 ]
+
 
 
 
