@@ -62,8 +62,21 @@
   {
     "title": "Five Night's at Shrek's Hotel",
     "entry": "games/FNASH/index.html"
+  },
+  {
+    "title": "One Night as Freddy",
+    "entry": "games/ONAF/index.html"
+  },
+  {
+    "title": "Cookie Clicker",
+    "entry": "games/CookieClicker/index.html"
+  },
+  {
+    "title": "Minecraft 1.12.2",
+    "entry": "games/MC1.12.2/index.html"
   }
 ]
+
 
 
 
