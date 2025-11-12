@@ -50,11 +50,11 @@
   {
     "title": "Granny 2",
     "entry": "games/Granny2/index.html"
-  }, 
+  },
   {
     "title": "Granny 3",
     "entry": "games/Granny3/index.html"
-  },  
+  },
   {
     "title": "Fruit Ninja",
     "entry": "games/FruitNinja/index.html"
@@ -72,10 +72,20 @@
     "entry": "games/CookieClicker/index.html"
   },
   {
-    "title": "Minecraft 1.12.2",
-    "entry": "games/MC1.12.2/index.html"
+    "title": "Baldi's Basics",
+    "entry": "games/BB/index.html"
+  },
+  {
+    "title": "Baldi Basic's The Ultra Decomplie",
+    "entry": "games/BBTUD/index.html"
+  },
+  {
+    "title": "Baldi Basic's Remastered",
+    "entry": "games/BBR/index.html"
   }
 ]
+
+
 
 
 
