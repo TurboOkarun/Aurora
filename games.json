@@ -14,6 +14,10 @@
   {
     "title": "FNF",
     "entry": "games/FNF/index.html"
+     },
+  {
+    "title": "FNF Indie Cross",
+    "entry": "games/IndieCross/index.html"
   },
   {
     "title": "Geometry Dash Lite",
@@ -84,6 +88,7 @@
     "entry": "games/BBR/index.html"
   }
 ]
+
 
 
 
