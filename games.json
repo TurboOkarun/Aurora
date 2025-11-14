@@ -102,8 +102,13 @@
   {
     "title": "Bitlife",
     "entry": "games/bitlife/index.html"
+  },
+  {
+    "title": "1v1.lol",
+    "entry": "games/1v1/index.html"
   }
 ]
+
 
 
 
