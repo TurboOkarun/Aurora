@@ -1,4 +1,4 @@
-[
+to[
   {
     "title": "Baldi's Classic Remaster",
     "entry": "games/baldi/index.html"
@@ -94,8 +94,13 @@
   {
     "title": "Fifa 11",
     "entry": "games/FIFA11/index.html"
+  },
+  {
+    "title": "Backrooms",
+    "entry": "games/Backrooms/index.html"
   }
 ]
+
 
 
 
