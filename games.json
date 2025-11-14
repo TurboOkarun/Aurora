@@ -98,8 +98,13 @@
   {
     "title": "Backrooms",
     "entry": "games/Backrooms/index.html"
+  },
+  {
+    "title": "Bitlife",
+    "entry": "games/bitlife/index.html"
   }
 ]
+
 
 
 
