@@ -90,7 +90,12 @@
   {
     "title": "Subway Surfers",
     "entry": "games/Subwaysurfers/index.html"
+  },
+  {
+    "title": "Fifa 11",
+    "entry": "games/Fifa11/index.html"
   }
 ]
+
 
 
