@@ -1,56 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aurora</title>
-  <link rel="shortcut icon" href="favicon.ico" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Launcherable</title>
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="background-overlay"></div>
-
-  <header class="header">
-    <div class="header-content">
-      <h1 class="logo">
-        <span class="logo-icon">🎮</span>
-        <span class="logo-text">Aurora</span>
-      </h1>
-      <div class="header-info">
-        <span class="game-count" id="gameCount">0 Games</span>
-      </div>
-    </div>
-  </header>
-
-  <main class="main-container">
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <h2>Game Library</h2>
-        <div class="search-box">
-          <input type="text" id="searchInput" placeholder="Search games..." />
+  <div class="app">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="logo">
+          <span class="logo-emoji">🎮</span>
+          <div class="logo-text">Launcherable</div>
         </div>
-      </div>
-      <div class="game-grid" id="gameGrid"></div>
-    </aside>
-
-    <section class="game-display">
-      <div class="toolbar">
-        <button id="backBtn" class="toolbar-btn hidden">🏠 Back</button>
-        <button id="fullscreenBtn" class="toolbar-btn hidden">⛶ Fullscreen</button>
+        <div class="tagline">Your web game launcher</div>
       </div>
 
-      <div class="welcome-screen" id="welcomeScreen">
-        <div class="welcome-content">
-          <div class="welcome-icon">🎮</div>
-          <h2>Select a Game to Play!</h2>
-          <p>Choose from your library to get started.</p>
+      <div class="topbar-right">
+        <div id="gameCount" class="pill">0 Games</div>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar" aria-label="Game library">
+        <div class="sidebar-head">
+          <h2>Game Library</h2>
+          <div class="search-wrap">
+            <input id="searchInput" class="search" type="search" placeholder="Search games..." aria-label="Search games" />
+          </div>
         </div>
-      </div>
 
-      <iframe id="gameFrame" class="game-frame"></iframe>
-    </section>
-  </main>
+        <div id="gameGrid" class="game-grid" role="list"></div>
+      </aside>
 
-  <script src="script.js"></script>
+      <section class="viewer">
+        <div class="viewer-toolbar">
+          <button id="backBtn" class="btn-secondary hidden" title="Back to library">🏠 Back</button>
+          <div class="viewer-actions">
+            <button id="fullscreenBtn" class="btn-primary hidden" title="Fullscreen">⛶</button>
+            <a id="openInNewBtn" class="btn-link hidden" target="_blank" rel="noopener" title="Open in new tab">↗ Open</a>
+          </div>
+        </div>
+
+        <div id="welcomeScreen" class="welcome">
+          <div class="welcome-inner">
+            <div class="welcome-emoji">🎮</div>
+            <h1>Select a Game to Play</h1>
+            <p>Pick a title from the left to launch in the viewer.</p>
+          </div>
+        </div>
+
+        <iframe id="gameFrame" class="game-frame" src="" title="Game viewer" sandbox="allow-same-origin allow-scripts allow-forms allow-modals"></iframe>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Launcherable • <small id="footerVersion">v1.0</small></div>
+      <div class="credits">Made with ❤️</div>
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
