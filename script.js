@@ -12,7 +12,6 @@ async function loadGames() {
     let availableGames = games.filter(g => g.entry);
     gameCount.textContent = `${availableGames.length} Game${availableGames.length !== 1 ? "s" : ""}`;
 
-    // Build game cards
     availableGames.forEach(game => {
       const card = document.createElement("div");
       card.className = "game-card";
@@ -29,13 +28,10 @@ async function loadGames() {
         </div>
       `;
 
-      // When clicked → open Xbox-style game menu
-      card.onclick = () => openGameMenu(game);
-
+      card.onclick = () => openGameMenu(game, card);
       gameGrid.appendChild(card);
     });
 
-    // Search filter
     searchInput.addEventListener("input", e => {
       const term = e.target.value.toLowerCase();
       for (const card of gameGrid.children) {
@@ -45,58 +41,71 @@ async function loadGames() {
     });
 
   } catch (err) {
-    console.error(err);
     alert("Could not load games.json — make sure it’s next to index.html");
   }
 }
 
 loadGames();
 
-/* -------------------------------
-   XBOX-STYLE GAME MENU OVERLAY
---------------------------------*/
-function openGameMenu(game) {
-  // fill overlay info
+let activeCard = null;
+
+function openGameMenu(game, card) {
+  const overlay = document.getElementById("gameOverlay");
+  const welcomeScreen = document.getElementById("welcomeScreen");
+
+  if (activeCard) activeCard.classList.remove("active");
+  card.classList.add("active");
+  activeCard = card;
+
+  welcomeScreen.classList.add("hidden");
+
   document.getElementById("overlayTitle").textContent = game.title;
-  document.getElementById("overlayDescription").textContent = game.description || "";
-  document.getElementById("overlayArt").src = game.art || "default_art.jpg";
+  document.getElementById("overlayArt").src = game.art || "default-art.png";
+  document.getElementById("overlayDesc").textContent = game.description || "Ready to play";
 
-  // play button
-  document.getElementById("overlayPlay").onclick = () => {
-    const gameFrame = document.getElementById("gameFrame");
-    const welcomeScreen = document.getElementById("welcomeScreen");
+  overlay.classList.add("open");
 
-    gameFrame.src = game.entry;
-    gameFrame.classList.add("visible");
-    welcomeScreen.classList.add("hidden");
-
-    // hide overlay
-    closeGameMenu();
-
-    document.getElementById("fullscreenBtn").classList.remove("hidden");
-    document.getElementById("backBtn").classList.remove("hidden");
+  document.getElementById("overlayPlay").onclick = () => startGame(game);
+  document.getElementById("overlayBack").onclick = () => {
+    overlay.classList.remove("open");
+    activeCard.classList.remove("active");
+    activeCard = null;
+    welcomeScreen.classList.remove("hidden");
   };
-
-  // show overlay
-  document.getElementById("gameOverlay").style.display = "flex";
 }
 
-function closeGameMenu() {
-  document.getElementById("gameOverlay").style.display = "none";
+function startGame(game) {
+  const overlay = document.getElementById("gameOverlay");
+  const gameFrame = document.getElementById("gameFrame");
+  const fullscreenBtn = document.getElementById("fullscreenBtn");
+  const backBtn = document.getElementById("backBtn");
+
+  gameFrame.src = game.entry;
+  gameFrame.classList.add("visible");
+
+  overlay.classList.remove("open");
+
+  fullscreenBtn.classList.remove("hidden");
+  backBtn.classList.remove("hidden");
 }
 
-/* -------------------------------
-   FRAME CONTROLS (Fullscreen/Back)
---------------------------------*/
 document.getElementById("fullscreenBtn").onclick = () => {
   const frame = document.getElementById("gameFrame");
   if (frame.requestFullscreen) frame.requestFullscreen();
 };
 
 document.getElementById("backBtn").onclick = () => {
-  document.getElementById("gameFrame").classList.remove("visible");
-  document.getElementById("gameFrame").src = "";
-  document.getElementById("welcomeScreen").classList.remove("hidden");
+  const frame = document.getElementById("gameFrame");
+  const welcomeScreen = document.getElementById("welcomeScreen");
+
+  frame.classList.remove("visible");
+  frame.src = "";
+
+  welcomeScreen.classList.remove("hidden");
+
   document.getElementById("fullscreenBtn").classList.add("hidden");
   document.getElementById("backBtn").classList.add("hidden");
+
+  if (activeCard) activeCard.classList.remove("active");
+  activeCard = null;
 };
