@@ -106,8 +106,13 @@
   {
     "title": "1v1.lol",
     "entry": "games/1v1/index.html"
+  },
+  {
+    "title": "Deltarune",
+    "entry": "games/deltarune/index.html"
   }
 ]
+
 
 
 
