@@ -370,107 +370,72 @@ body {
   }
 
 /* ============================
-   XBOX-STYLE GAME OVERLAY MENU
+   INLINE OVERLAY (INSIDE PANEL)
    ============================ */
 
-.overlay {
-  position: fixed;
+.inline-overlay {
+  position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(15px);
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
-  z-index: 999;
+  z-index: 5;
 }
 
-.overlay.open {
+.inline-overlay.open {
   opacity: 1;
   pointer-events: all;
 }
 
-.overlay-content {
+.inline-overlay-content {
+  width: 420px;
   background: linear-gradient(145deg, var(--bg-light), var(--bg-dark));
-  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1.8rem;
   border-radius: 20px;
-  padding: 2rem;
-  width: 480px;
+  border: 1px solid rgba(255,255,255,0.12);
   text-align: center;
   animation: scaleIn 0.35s ease;
-  box-shadow: 0 0 40px rgba(99, 102, 241, 0.35);
 }
 
-@keyframes scaleIn {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.overlay-art {
+.inline-overlay-art {
   width: 100%;
-  height: 260px;
-  border-radius: 16px;
+  height: 220px;
   object-fit: cover;
-  margin-bottom: 1.5rem;
-  border: 2px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  margin-bottom: 1.2rem;
+  border: 2px solid rgba(255,255,255,0.15);
   box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
 }
 
-.overlay h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.overlay p {
-  color: var(--text-muted);
-  margin-bottom: 2rem;
-  padding: 0 1rem;
-}
-
-.overlay-play {
+.inline-overlay-play,
+.inline-overlay-back {
   width: 90%;
-  padding: 0.9rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  border: none;
+  padding: 0.85rem;
+  font-size: 1.05rem;
   border-radius: 14px;
-  color: white;
-  font-size: 1.1rem;
+  margin-top: 0.55rem;
+  cursor: pointer;
+  border: none;
+}
+
+.inline-overlay-play {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
   font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
 }
 
-.overlay-play:hover {
+.inline-overlay-play:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
 }
 
-.overlay-back {
-  width: 90%;
-  padding: 0.75rem;
+.inline-overlay-back {
   background: rgba(255,255,255,0.1);
+  color: #fff;
   border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 12px;
-  color: var(--text-main);
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.overlay-back:hover {
-  background: rgba(255,255,255,0.18);
 }
