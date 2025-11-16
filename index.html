@@ -7,6 +7,7 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="background-overlay"></div>
 
@@ -50,6 +51,19 @@
       <iframe id="gameFrame" class="game-frame"></iframe>
     </section>
   </main>
+
+  <!-- ⭐⭐ XBOX-STYLE GAME MENU OVERLAY ⭐⭐ -->
+  <div id="gameOverlay" class="overlay">
+    <div class="overlay-content">
+      <img id="overlayArt" class="overlay-art" />
+      <h2 id="overlayTitle"></h2>
+      <p id="overlayDescription"></p>
+
+      <button id="overlayPlay" class="overlay-play">PLAY</button>
+      <button onclick="closeGameMenu()" class="overlay-back">BACK</button>
+    </div>
+  </div>
+  <!-- ⭐⭐ END OVERLAY ⭐⭐ -->
 
   <script src="script.js"></script>
 </body>
