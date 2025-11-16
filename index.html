@@ -7,7 +7,6 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <div class="background-overlay"></div>
 
@@ -35,45 +34,23 @@
     </aside>
 
     <section class="game-display">
-  <div class="toolbar">
-    <div id="gameOverlay" class="game-overlay">
-  <img id="overlayArt" class="overlay-art" src="" />
-  
-  <div class="overlay-info">
-    <h2 id="overlayTitle"></h2>
-    <p id="overlayDesc"></p>
+      <div class="toolbar">
+        <button id="backBtn" class="toolbar-btn hidden">🏠 Back</button>
+        <button id="fullscreenBtn" class="toolbar-btn hidden">⛶ Fullscreen</button>
+      </div>
 
-    <div class="overlay-buttons">
-      <button id="overlayPlay" class="overlay-btn play-btn">▶ Play</button>
-      <button id="overlayBack" class="overlay-btn back-btn">✖ Back</button>
-    </div>
-  </div>
-</div>
+      <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-content">
+          <div class="welcome-icon">🎮</div>
+          <h2>Select a Game to Play!</h2>
+          <p>Choose from your library to get started.</p>
+        </div>
+      </div>
 
-    <button id="backBtn" class="toolbar-btn hidden">🏠 Back</button>
-    <button id="fullscreenBtn" class="toolbar-btn hidden">⛶ Fullscreen</button>
-  </div>
+      <iframe id="gameFrame" class="game-frame"></iframe>
+    </section>
+  </main>
 
-  <div class="welcome-screen" id="welcomeScreen">
-    <div class="welcome-content">
-      <div class="welcome-icon">🎮</div>
-      <h2>Select a Game to Play!</h2>
-      <p>Choose from your library to get started.</p>
-    </div>
-  </div>
-
-  <!-- ⭐ NEW XBOX OVERLAY (INSIDE GAME DISPLAY) ⭐ -->
-  <div id="gameOverlay" class="inline-overlay">
-    <div class="inline-overlay-content">
-      <img id="overlayArt" class="inline-overlay-art" src="" alt="art">
-      <h2 id="overlayTitle"></h2>
-      <p id="overlayDesc">Ready to play</p>
-
-      <button id="overlayPlay" class="inline-overlay-play">▶ Play</button>
-      <button id="overlayBack" class="inline-overlay-back">↩ Back</button>
-    </div>
-  </div>
-
-  <iframe id="gameFrame" class="game-frame"></iframe>
-</section>
+  <script src="script.js"></script>
+</body>
 </html>
