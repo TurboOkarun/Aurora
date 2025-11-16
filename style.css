@@ -368,47 +368,109 @@ body {
   .sidebar.open {
     transform: translateX(0);
   }
+
+/* ============================
+   XBOX-STYLE GAME OVERLAY MENU
+   ============================ */
+
 .overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.75);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(8px);
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 999;
+}
+
+.overlay.open {
+  opacity: 1;
+  pointer-events: all;
 }
 
 .overlay-content {
-    background: #111;
-    padding: 20px;
-    border-radius: 20px;
-    width: 80%;
-    max-width: 600px;
-    text-align: center;
+  background: linear-gradient(145deg, var(--bg-light), var(--bg-dark));
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 480px;
+  text-align: center;
+  animation: scaleIn 0.35s ease;
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.35);
 }
 
-.game-art {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 20px;
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-.play-button {
-    background: #0f0;
-    border: none;
-    padding: 12px 30px;
-    font-size: 20px;
-    cursor: pointer;
-    margin-right: 10px;
+.overlay-art {
+  width: 100%;
+  height: 260px;
+  border-radius: 16px;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 2px solid rgba(255,255,255,0.12);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
 }
 
-.back-button {
-    background: #333;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    font-size: 20px;
-    cursor: pointer;
+.overlay h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+.overlay p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.overlay-play {
+  width: 90%;
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+}
+
+.overlay-play:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+}
+
+.overlay-back {
+  width: 90%;
+  padding: 0.75rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.overlay-back:hover {
+  background: rgba(255,255,255,0.18);
+}
